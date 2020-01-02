@@ -11,7 +11,7 @@
 #' a drive time polygon from the ArcGIS World GeoEnrichmentService. See the
 #' documentation here:
 #' https://developers.arcgis.com/rest/geoenrichment/api-reference/enrich.htm
-#' @importFrom dplyr select rename mutate summarize group_by pull
+#' @importFrom dplyr %>% select rename mutate summarize group_by pull
 #' @importFrom tidyr spread gather
 #' @export
 get_drive_time_demographics <- function(token, x, y, drive_time = 10,
