@@ -7,6 +7,13 @@
 #' @importFrom httr POST content
 #' @importFrom jsonlite fromJSON
 #' @export
+#' @examples
+#' \dontrun{
+#' client_id <- "your client id"
+#' client_secret <- "your client secret"
+#'
+#' generate_token(client_id, client_secret)
+#' }
 generate_token <- function(client_id, client_secret, expiration = "60") {
 
   url <- paste0("https://www.arcgis.com/sharing/rest/oauth2/token?client_id=",

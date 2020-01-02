@@ -14,6 +14,15 @@
 #' @importFrom dplyr %>% select rename mutate summarize group_by pull
 #' @importFrom tidyr spread gather
 #' @export
+#' @examples
+#' \dontrun{
+#' client_id <- "your client id"
+#' client_secret <- "your client secret"
+#'
+#' token <- generate_token(client_id, client_secret)
+#'
+#' get_drive_time_demographics(token, -86.157963, 39.768454)
+#' }
 get_drive_time_demographics <- function(token, x, y, drive_time = 10,
                                         unit = "Minutes",
                                         demographics = c("KeyGlobalFacts",
@@ -27,7 +36,7 @@ get_drive_time_demographics <- function(token, x, y, drive_time = 10,
   data_collections <- paste0('["', paste(demographics, collapse = '", "'), '"]')
 
   demographics <- httr::POST("https://geoenrich.arcgis.com/arcgis/rest/services/World/geoenrichmentserver/GeoEnrichment/enrich",
-                             add_headers('Content-Type' = 'application/x-www-form-urlencoded'),
+                             httr::add_headers('Content-Type' = 'application/x-www-form-urlencoded'),
                              body = list(f = "json",
                                          token = token,
                                          outSr = "4326",
