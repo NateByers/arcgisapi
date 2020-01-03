@@ -32,3 +32,13 @@ a drive time polygon from the ArcGIS World GeoEnrichmentService. See the
 documentation here:
 https://developers.arcgis.com/rest/geoenrichment/api-reference/enrich.htm
 }
+\examples{
+\dontrun{
+client_id <- "your client id"
+client_secret <- "your client secret"
+
+token <- generate_token(client_id, client_secret)
+
+get_drive_time_demographics(token, -86.157963, 39.768454)
+}
+}

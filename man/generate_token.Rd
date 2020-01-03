@@ -16,6 +16,14 @@ generate_token(client_id, client_secret, expiration = "60")
 \description{
 Generate an access token
 }
+\examples{
+\dontrun{
+client_id <- "your client id"
+client_secret <- "your client secret"
+
+generate_token(client_id, client_secret)
+}
+}
 \references{
 https://developers.arcgis.com/
 }
