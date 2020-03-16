@@ -3,6 +3,7 @@
 export(generate_token)
 export(get_drive_time)
 export(get_drive_time_demographics)
+export(get_lat_long)
 importFrom(dplyr,"%>%")
 importFrom(dplyr,group_by)
 importFrom(dplyr,mutate)
